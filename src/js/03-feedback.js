@@ -24,7 +24,13 @@ formElement.addEventListener('submit', (e) =>{
         email : formElement.firstElementChild.firstElementChild.value,
         message : formElement.children[1].lastElementChild.value
     }))
-    console.log(JSON.parse(localStorage.getItem('feedback-form-state')))
-    formElement.reset()
-    localStorage.clear()
+    if(formElement.firstElementChild.firstElementChild.value != '' && formElement.children[1].lastElementChild.value != ''){
+        console.log(JSON.parse(localStorage.getItem('feedback-form-state')))
+        formElement.reset()
+        localStorage.removeItem('feedback-form-state')
+    }
+    else{
+        alert("Both fields must be completed")
+    }
+
 })
