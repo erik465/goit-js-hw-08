@@ -15,7 +15,6 @@ formElement.addEventListener('input', throttle(() => {
         email : formElement.firstElementChild.firstElementChild.value,
         message : formElement.children[1].lastElementChild.value
     }))
-    console.log(localStorage.getItem('feedback-form-state'))
 }, 500))
 
 formElement.addEventListener('submit', (e) =>{
